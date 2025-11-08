@@ -24,12 +24,16 @@
           <div id="user-info" class="hidden">
             <span id="display-name"></span>
             <button id="logout-button">Logout</button>
+              <button id="manage-announcements" class="icon-button hidden">
+                <span class="announcement-icon">📢</span>
+                <span>Manage Announcements</span>
+              </button>
           </div>
         </div>
       </div>
     </header>
     <div class="announcement-banner">
-      📢 Activity registration is open until the end of the month. Don't lose your spot!
+      <span id="announcement-messages">📢 Loading announcements...</span>
     </div>
     <main>
       <section id="activities-container">
@@ -135,6 +139,34 @@
         <div id="login-message" class="hidden message"></div>
       </div>
     </div>
+
+      <!-- Announcement Management Modal -->
+      <div id="announcement-modal" class="modal hidden">
+        <div class="modal-content announcement-modal-content">
+          <span class="close-announcement-modal">&times;</span>
+          <h3>Manage Announcements</h3>
+          <div id="announcement-list">
+            <!-- Announcements will be loaded here -->
+          </div>
+          <form id="announcement-form">
+            <div class="form-group">
+              <label for="announcement-message">Message:</label>
+              <input type="text" id="announcement-message" required placeholder="Announcement message" />
+            </div>
+            <div class="form-group">
+              <label for="announcement-expiration">Expiration Date:</label>
+              <input type="date" id="announcement-expiration" required />
+            </div>
+            <div class="form-group">
+              <label for="announcement-start">Start Date (optional):</label>
+              <input type="date" id="announcement-start" />
+            </div>
+            <input type="hidden" id="announcement-id" value="" />
+            <button type="submit" id="save-announcement">Save Announcement</button>
+          </form>
+          <div id="announcement-message-area" class="hidden message"></div>
+        </div>
+      </div>
 
     <script src="app.js"></script>
   </body>
