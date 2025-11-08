@@ -32,6 +32,14 @@
   --info-light: #d1ecf1;
 }
 
+.announcement-banner {
+  background-color: var(--success);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
